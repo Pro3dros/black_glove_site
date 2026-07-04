@@ -7,4 +7,9 @@ export default defineConfig({
     react(),
     tsconfigPaths(),
   ],
+  build: {
+    rollupOptions: {
+      input: './src/start.ts', 
+    },
+  },
 });
