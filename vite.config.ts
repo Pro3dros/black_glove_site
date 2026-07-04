@@ -1,15 +1,9 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import tsconfigPaths from "vite-tsconfig-paths";
+import { defineConfig } from '@tanstack/start/config'
 
 export default defineConfig({
-  plugins: [
-    react(),
-    tsconfigPaths(),
-  ],
-  build: {
-    rollupOptions: {
-      input: './src/start.ts', 
-    },
-  },
-});
+  start: {
+    server: {
+      preset: 'netlify' // Εδώ λέμε στο TanStack να φτιάξει το σωστό format για το Netlify
+    }
+  }
+})
